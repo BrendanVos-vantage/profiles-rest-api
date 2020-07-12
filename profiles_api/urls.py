@@ -5,7 +5,8 @@ from profiles_api import views
 
 
 router = DefaultRouter()
-router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset')
+router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset') # only specify base name if don't have query set
+router.register('profile', views.UserProfileViewSet) # don't need to specify base name, as we are passing a query set
 
 
 urlpatterns = [
